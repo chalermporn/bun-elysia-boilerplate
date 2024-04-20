@@ -26,7 +26,7 @@ export const jwtAccessSetup = new Elysia({
     schema: t.Object({
       userId: t.String(),
     }),
-    secret: process.env.JWT_ACCESS_SECRET || "DO NOT USE THIS SECRET KEY",
+    secret: process.env.JWT_ACCESS_SECRET ?? "DO NOT USE THIS SECRET KEY",
     exp: 30 * 24 * 60 * 60,
   }),
 );
@@ -39,7 +39,7 @@ export const jwtRefreshSetup = new Elysia({
     schema: t.Object({
       userId: t.String(),
     }),
-    secret: process.env.JWT_REFRESH_SECRET || "DO NOT USE THIS SECRET KEY",
+    secret: process.env.JWT_REFRESH_SECRET ?? "DO NOT USE THIS SECRET KEY",
     exp: 30 * 24 * 60 * 60,
   }),
 );

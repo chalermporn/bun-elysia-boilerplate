@@ -4,4 +4,8 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     },
+    "cSpell.words": [
+        "Elysia",
+        "elysiajs"
+    ],
 }
