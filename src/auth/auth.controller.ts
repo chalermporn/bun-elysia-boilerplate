@@ -34,14 +34,16 @@ export const auth = createElysia({ prefix: "/auth" })
         "access_token",
         await jwtAccess.sign({
           userId: user._id,
-        }), // @ts-ignore
+        }),
+        // @ts-expect-error: Unreachable code error
         CookieOptions.accessToken,
       );
       setCookie(
         "refresh_token",
         await jwtRefresh.sign({
           userId: user._id,
-        }), // @ts-ignore
+        }),
+        // @ts-expect-error: Unreachable code error
         CookieOptions.refreshToken,
       );
 
@@ -69,14 +71,14 @@ export const auth = createElysia({ prefix: "/auth" })
         "access_token",
         await jwtAccess.sign({
           userId: user._id,
-        }), // @ts-ignore
+        }), // @ts-expect-error: Unreachable code error
         CookieOptions.accessToken,
       );
       setCookie(
         "refresh_token",
         await jwtRefresh.sign({
           userId: user._id,
-        }), // @ts-ignore
+        }), // @ts-expect-error: Unreachable code error
         CookieOptions.refreshToken,
       );
 

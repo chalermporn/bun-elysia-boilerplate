@@ -17,11 +17,11 @@ api.use(jwtAccessSetup).use(jwtRefreshSetup).use(cookie());
 //Security;
 api.use(
   cors({
-    origin: process.env.CORS_ORIGIN || "*",
+    origin: process.env.CORS_ORIGIN ?? "*",
     credentials: true,
-    exposedHeaders: process.env.CORS_EXPOSED_HEADERS || "*",
-    allowedHeaders: process.env.CORS_ALLOWED_HEADER || "*",
-    // @ts-ignore
+    exposedHeaders: process.env.CORS_EXPOSED_HEADERS ?? "*",
+    allowedHeaders: process.env.CORS_ALLOWED_HEADER ?? "*",
+    // @ts-expect-error: Unreachable code error
     methods: (process.env.CORS_ALLOWED_METHODS! as HTTPMethod) || "*",
   }),
 );
@@ -32,8 +32,8 @@ api.use(auth);
 api.use(apiRoutes);
 api.get("/", () => "Welcome to Elysia!");
 
-api.listen(process.env.PORT || 8080);
+api.listen(process.env.PORT ?? 8080);
 
 console.log(
-  `🦊 Elysia is running at ${api.server?.hostname}:${process.env.PORT || 8080}`,
+  `🦊 Elysia is running at ${api.server?.hostname}:${process.env.PORT ?? 8080}`,
 );
