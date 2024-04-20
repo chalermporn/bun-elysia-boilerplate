@@ -17,37 +17,64 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "prettier", "simple-import-sort"],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "simple-import-sort"
+  ],
   "rules": {
     "simple-import-sort/imports": [
       "error",
       {
         "groups": [
           /* Style imports */
-          ["^.+\\.?(css)$"],
-
+          [
+            "^.+\\.?(css)$"
+          ],
           /* elysia imports */
-          ["^elysia", "^@?\\w"],
-
+          [
+            "^elysia",
+            "^@?\\w"
+          ],
           /* Side effect imports */
-          ["^(\\u0000|@?\\w)(/.*|$)"],
-
+          [
+            "^(\\u0000|@?\\w)(/.*|$)"
+          ],
           /* Parent imports. Put `..` last */
-          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-
+          [
+            "^\\.\\.(?!/?$)",
+            "^\\.\\./?$"
+          ],
           /* Other relative imports. Put same-folder imports and `.` last */
-          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+          [
+            "^\\./(?=.*/)(?!/?$)",
+            "^\\.(?!/?$)",
+            "^\\./?$"
+          ]
         ]
       }
     ],
     "simple-import-sort/exports": "error",
-    "import/extensions": [0],
-    "semi": ["error", "always"],
-    "quotes": ["error", "double"],
+    "import/extensions": [
+      0
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ],
     "no-console": 0,
     "no-control-regex": 0,
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    "@typescript-eslint/ban-ts-comment": 1
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "@typescript-eslint/ban-ts-comment": "warn"
   },
   "settings": {
     "react": {

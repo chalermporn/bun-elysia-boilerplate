@@ -1,0 +1,7 @@
+{
+    // auto forma on save
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+}
